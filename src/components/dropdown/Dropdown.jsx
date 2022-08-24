@@ -1,10 +1,10 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import dropdown from './dropdown.css'
+import './dropdown.css'
 
-const Dropdown = ({ dropDown }) => {
+const Dropdown = ({ dropDown, menuLevel, side }) => {
 	return (
-		<ul className="ml2 dropdown-left">
+		<ul className={`${menuLevel} dropdown-${side}`}>
 			{dropDown &&
 				dropDown.map(item => (
 					<li key={item.key}>

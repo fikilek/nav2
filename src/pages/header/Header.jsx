@@ -5,6 +5,8 @@ import Dropdown from "../../components/dropdown/Dropdown";
 import astNames from "../../data/astNames";
 import trnNames from "../../data/trnNames";
 import "./header.css";
+import unpDropdown from "../../data/unpDropdown";
+import adminDropdown from "../../data/adminDropdown";
 
 const Header = () => {
 	const [menuOpen, setMenuOpen] = useState(false);
@@ -19,46 +21,34 @@ const Header = () => {
 				<div className="mml">
 					<ul className="ml1">
 						<li>
+							<NavLink to="/dbd">Dbd </NavLink>
+							<Dropdown dropDown={astNames} menuLevel="ml2" side="left" />
+						</li>
+						<li>
 							<NavLink to="/asts">Asts </NavLink>
-							<Dropdown dropDown={astNames} />
+							<Dropdown dropDown={astNames} menuLevel="ml2" side="left" />
 						</li>
 						<li>
 							<NavLink to="/trns">Trns </NavLink>
-							<Dropdown dropDown={trnNames} />
+							<Dropdown dropDown={trnNames} menuLevel="ml2" side="left" />
+						</li>
+						<li>
+							<NavLink to="/erfs">Erfs </NavLink>
 						</li>
 					</ul>
 				</div>
 				<div className="mmr">
 					<ul className="ml1">
 						<li>
+							<NavLink to="/bok">Bok </NavLink>
+						</li>
+						<li>
 							<NavLink to="/admin">Admin </NavLink>
-							<ul className="ml2 drop-downright">
-								<li>
-									<NavLink to="/users">users </NavLink>
-								</li>
-								<li>
-									<NavLink to="/syst-tables">Sigh Out </NavLink>
-									<ul className="ml2 dropdown-right">
-										<li>
-											<NavLink to="/roles">User Roles </NavLink>
-										</li>
-										<li>
-											<NavLink to="/asts-states">Asts States </NavLink>
-										</li>
-									</ul>
-								</li>
-							</ul>
+							<Dropdown dropDown={adminDropdown} menuLevel="ml2" side="right" />
 						</li>
 						<li onClick={() => setMenuOpen(false)}>
 							<NavLink to="/unp">FK </NavLink>
-							<ul className="ml2 dropdown-right">
-								<li>
-									<NavLink to="/profile">Profile </NavLink>
-								</li>
-								<li>
-									<NavLink to="/signout">Sigh Out </NavLink>
-								</li>
-							</ul>
+							<Dropdown dropDown={unpDropdown} menuLevel="ml2" side="right" />
 						</li>
 					</ul>
 				</div>
