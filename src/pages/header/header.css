@@ -1,0 +1,82 @@
+.nav,
+.ml1,
+.mm {
+	display: flex;
+	gap: 1rem;
+}
+
+.mm {
+	width: 100%;
+	justify-content: space-between;
+}
+
+.nav {
+	background-color: beige;
+	position: relative;
+	height: 2rem;
+}
+
+.menu-icon svg {
+	display: none;
+}
+
+.menu-icon {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+@media screen and (max-width: 500px) {
+	body {
+		/* background-color: aquamarine; */
+	}
+
+	.mm {
+    background-color: aqua;
+    height: calc(100vh - 3rem);
+    position: absolute;
+    top: 100%;
+	}
+
+	.menu-icon svg {
+		display: block;
+	}
+
+	.mm-hide {
+		display: none;
+	}
+
+	.mm-show {
+		display: block;
+	}
+
+	.mml .ml1,
+	.mmr .ml1 {
+		position: absolute;
+		top: 3rem;
+		flex-direction: column;
+	}
+
+	.mml .ml1 {
+		left: 0;
+	}
+
+	.mmr .ml1 {
+		right: 0;
+		align-items: flex-end;
+	}
+
+	.nav {
+		background-color: beige;
+		justify-content: space-between;
+		position: relative;
+	}
+
+	.menu-icon {
+		position: absolute;
+		top: 50%;
+		right: 0;
+		transform: translateY(-50%);
+		margin-right: 0.5rem;
+	}
+}
